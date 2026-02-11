@@ -6,108 +6,208 @@ repository: gorb6593/gorb6593.github.io
 version: 2
 
 # Personal info
-name: HARRY
-title: Your Job Title
-email: gorb6593@gmail.com
-# phone: Your phone number
-website: https://gorb6593.github.io/
+name: 이해규
+title: Backend Developer
+email: gorb6593@naver.com
+phone: 010-8613-9192
+website: https://gorb6593.github.io
 
 # Dark Mode (true/false/never)
 darkmode: false
 
 # Social links
-# twitter_username:
 github_username: gorb6593
-# stackoverflow_username:
-# dribbble_username:
-# facebook_username:
-# flickr_username:
-# instagram_username:
-# linkedin_username:
-# xing_username:
-# pinterest_username:
-# youtube_username:
-# orcid_username:
-# googlescholar_username:
 
 # Additional icon links
-# additional_links:
-# - title: Link name
-#   icon: fab fa-twitter
-#   url: https://example.com
-
-# Google Analytics and Tag Manager
-# gtm: "GTM-0000000"
-# gtag: "UA-00000000-0"
-# google_analytics: "UA-00000000-0"
+additional_links:
+  - title: Blog
+    icon: fas fa-blog
+    url: https://harrystroy.tistory.com/
 
 # About Section
-# about_title: About Me
 about_profile_image: images/profile.jpg
 about_content: |
-  안녕하세요! 저는 HARRY입니다.
+  Java & Spring Boot / Vue & Javascript, AWS 기반의 **5년차 백엔드 개발자**입니다.
 
-  이곳에 자기소개를 작성해주세요. 마크다운을 지원하므로 [링크](http://example.com)나 <mark>하이라이트</mark>를 사용할 수 있습니다.
+  요양 플랫폼(기웅정보통신), 세무 플랫폼(리드넘버, 쌤157), 교육 플랫폼(챔프스터디)에서 **특정 시즌에 집중되는 대규모 트래픽** 환경에서 서버 개발을 진행했습니다.
+  다양한 언어와 환경에서 개발된 레거시 코드를 개선하는 것이 강점으로 그 과정에서 도메인을 빠르게 학습합니다.
+
+  기획과 소통을 당연하게 생각하며, 전 직장에서 **회원 등록 프로세스 개선으로 등록 시간 70% 단축**, **세무 신고 준비 기간 75% 단축** 등 비용 절감과 매출 증가를 기록했습니다.
+  현재는 개인 앱을 개발/운영하며 기획부터 마케팅까지 전 과정을 경험하고 있습니다.
 
 content:
+  - title: Experience
+    layout: list
+    content:
+      - layout: left
+        title: 기웅정보통신(주)
+        link: https://www.kwic.co.kr/main.do
+        caption: 2025.03 ~ 현재
+        description: |
+          요양 서비스 플랫폼
+
+          **이지케어 앱 신규개발** (2025.12 ~ 2026.01)
+          - 레거시 Flutter 앱을 최신화하고 기존 웹뷰 페이지 개선작업
+          - 앱 고유 기능(푸시 알림, 카메라 등) 활성화 및 UX 개선
+
+          **요양 시스템 전면 리뉴얼** (2025.03 ~ 2025.12)
+          - **PHP → Java Spring Boot, Vue.js 전환** 마이그레이션 주도
+          - 레거시 OzReport 연동 시스템 재설계 및 안정화
+          - 기획 단계부터 참여하여 개발 일정 및 우선순위 조율
+
+      - layout: left
+        title: 리드넘버
+        link: https://readnumber.com
+        caption: 2023.11 ~ 2025.02
+        description: |
+          **고객수 5,000명**의 세무 서비스 플랫폼
+
+          **부가세/종합소득세 신고 시스템 고도화** (2024.01 ~ 2024.05)
+          - 홈택스/배달앱 API 연동으로 매출 데이터 **자동 수집 시스템** 구축
+          - 데이터 검증 및 전처리 자동화로 **신고 준비 기간 75% 단축** (4주 → 1주)
+          - 기술 스택: Java8, Spring Boot 2.1, MyBatis, MySQL, KT Cloud
+
+          **신고 상황 알리미 서비스** (2024.06)
+          - 종합소득세/부가가치세 신고 진행 현황 **실시간 모니터링 시스템** 구축
+          - 서비스 오픈 후 **누적 방문 1만회 이상** 달성 (전체 고객 4,000명 대비 250% 도달)
+          - 기술 스택: Java17, Spring Boot 3.2, JPA, MySQL8, AWS
+
+          **레거시 시스템 개선 및 유지보수** (2024.01 ~ 2025.02)
+          - 수임동의 프로세스 자동화로 **고객 등록 시간 70% 단축**
+          - 고객 상태 자동변경 배치 고도화로 **상태 관리 정확도 100%** 달성
+          - 스크래핑 서버 다중화 및 장애 대응 체계 구축
+
+      - layout: left
+        title: (주) 챔프스터디
+        link: https://www.hackers.com/
+        sub_title: 통합인프라개발팀 사원
+        caption: 2022.08 ~ 2023.12 (1년 5개월)
+        description: |
+          **해커스** 교육 플랫폼
+
+          **합격/불합격 인증 서비스 개발** (2023.01 ~ 2023.11)
+          - 자격증 시험 응시생 간 점수 비교 서비스 구축
+          - 발표 전 2~3달 시점에서 합격 가능성 예측 정보 제공
+          - 관리자용 사용자 정보 관리 기능 개발
+
+          **모의고사 시스템 개발**
+          - 모의고사 선택 및 응시 서비스 전체 설계/개발
+          - 관리자(강사)용 문제 관리 시스템 구축
+          - 응시생 데이터 비교/분석 **시각화 대시보드** 개발
+
+          **통합 API 개발 및 유지보수** (2022.08 ~ 2023.11)
+          - 해커스 전체 사이트 **공통 API** 설계 및 개발
+          - 개정 강의 지급, 신규 쿠폰 지급 등 전 사이트 적용
+          - 다양한 이벤트(퀴즈, 선착순, 게임, 문자 참여) 시스템 개발
+
+      - layout: left
+        title: (주) 널리소프트
+        sub_title: 백엔드개발팀 인턴
+        caption: 2022.01 ~ 2022.07 (7개월)
+        description: |
+          **챗봇 서비스** 스타트업
+
+          **관리자용 통계 시스템 개발** (2022.04 ~ 2022.07)
+          - 챗봇 사용자 통계 **시각화 대시보드** 개발
+          - 마케팅 팀 요구사항 기반 통계 사이트 고도화
+          - 통계 쿼리 배치 최적화
+
+          **MSA 어드민 사이트 개발** (2022.01 ~ 2022.04)
+          - MSA 환경 관리자용 통합 어드민 시스템 설계/개발
+          - 관리자 권한 테이블 설계 및 RBAC 구현
+          - 권한 요청/승인 알림 시스템 개발
+
+  - title: 역량
+    layout: text
+    content: |
+      **레거시 시스템 마이그레이션**
+      - 기웅정보통신 요양 시스템 (PHP → Java Spring Boot, Vue.js) 전환 (2025)
+      - 다양한 레거시 환경에서의 점진적 개선 경험
+
+      **대용량 데이터 처리 및 자동화**
+      - 홈택스/배달앱 API 연동 매출 데이터 자동 수집 시스템 구축
+      - 배치 프로그램을 통한 데이터 검증/전처리 자동화
+      - 스크래핑 서버 다중화 및 장애 대응 체계 구축
+
+      **프로세스 개선을 통한 비용 절감**
+      - 세무 신고 준비 기간 75% 단축 (4주 → 1주)
+      - 고객 등록 시간 70% 단축
+      - 고객 상태 관리 정확도 100% 달성
+
   - title: Projects
     layout: list
     content:
       - layout: left
-        border: weak
-        title: 프로젝트 이름
-        link: https://github.com/gorb6593
-        link_text: GitHub
+        title: 아이캠
+        link: https://apps.apple.com/kr/app/아이캠/id6755982767
+        link_text: App Store
         additional_links:
-          - title: GitHub
-            icon: fab fa-github
-            url: https://github.com/gorb6593
-        quote: >
-          프로젝트 간단 설명
+          - title: App Store
+            icon: fab fa-app-store
+            url: https://apps.apple.com/kr/app/아이캠/id6755982767
         description: |
-          프로젝트에 대한 상세 설명을 여기에 작성해주세요.
+          **CCTV 모니터링 앱**
+          - 기획, 개발, 마케팅까지 1인 개발 프로젝트
+          - Flutter 기반 크로스 플랫폼 앱
 
-  - title: Experience
-    layout: list
-    content:
-      - layout: right
-        title: 회사명
-        sub_title: 직책
-        caption: 2020 - 현재
-        # link: https://company.com
-        quote: >
-          회사에 대한 간단한 설명
+      - layout: left
+        title: 마음기록
+        link: https://apps.apple.com/kr/app/마음기록/id6753328068
+        link_text: App Store
+        additional_links:
+          - title: App Store
+            icon: fab fa-app-store
+            url: https://apps.apple.com/kr/app/마음기록/id6753328068
         description: |
-          담당 업무에 대한 설명을 여기에 작성해주세요.
+          **상담 및 채팅 앱**
+          - 1인 개발 프로젝트
+          - 사업 전체 프로세스 경험 (기획 → 개발 → 운영 → 마케팅)
+
+  - title: Skill
+    layout: text
+    content: |
+      현재 업무에 사용 중이거나 사용했던 기술들입니다.
+
+      **Backend**
+      - Java, Spring Boot, Spring MVC, Spring Batch, Spring Data JPA
+      - JPA, Querydsl, MyBatis, Hibernate
+      - Junit, Mockito
+      - Gradle, Maven
+
+      **DevOps**
+      - MySQL, MariaDB
+      - AWS (EC2, RDS, S3), KT Cloud
+      - Docker, Linux
+      - Git, GitHub
+
+      **Frontend**
+      - JavaScript, Vue.js
+      - Flutter
 
   - title: Education
     layout: list
     content:
       - layout: top-right
-        title: 학교명
-        sub_title: 전공
-        caption: 2016 - 2020
-        quote: >
-          학교 또는 전공에 대한 간단한 설명
-        description: |
-          학력에 대한 상세 설명을 여기에 작성해주세요.
+        title: 한국방송통신대학교
+        sub_title: 컴퓨터과학과 (졸업)
+        caption: 2022.08 ~ 2025.07
 
-  - title: Skills
+      - layout: top-right
+        title: 멀티캠퍼스
+        sub_title: 빅데이터를 활용한 IoT 시스템 개발 (6개월 과정)
+        caption: 2021.12
+        link: https://github.com/gorb6593/FinalWork
+        link_text: GitHub
+
+  - title: Certifications
     layout: text
     content: |
-      여기에 보유 기술이나 관심사를 작성해주세요.
-
-      - **Programming Languages**: Java, Python, JavaScript
-      - **Frameworks**: Spring, React
-      - **Tools**: Git, Docker
+      - **SQLD** - 한국데이터산업진흥원 (2024.06)
 
 # Footer
 footer_show_references: true
-# references_title: References on request
 
 # Build settings
-# theme: modern-resume-theme
-
 sass:
   sass_dir: _sass
   style: compressed
