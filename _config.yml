@@ -1,39 +1,130 @@
-# Site settings
-title:          HARRY STORY
-description:    ""
-url:            https://gorb6593.github.io/
+# Site
+repository: gorb6593/gorb6593.github.io
+# favicon: images/favicon.ico
 
-# Author
-author:
-  name:         HARRY
-  email:        gorb6593@gmail.com
-  url:          https://gorb6593.github.io/
+# Content configuration version
+version: 2
+
+# Personal info
+name: HARRY
+title: Your Job Title
+email: gorb6593@gmail.com
+# phone: Your phone number
+website: https://gorb6593.github.io/
+
+# Dark Mode (true/false/never)
+darkmode: false
+
+# Social links
+# twitter_username:
+github_username: gorb6593
+# stackoverflow_username:
+# dribbble_username:
+# facebook_username:
+# flickr_username:
+# instagram_username:
+# linkedin_username:
+# xing_username:
+# pinterest_username:
+# youtube_username:
+# orcid_username:
+# googlescholar_username:
+
+# Additional icon links
+# additional_links:
+# - title: Link name
+#   icon: fab fa-twitter
+#   url: https://example.com
+
+# Google Analytics and Tag Manager
+# gtm: "GTM-0000000"
+# gtag: "UA-00000000-0"
+# google_analytics: "UA-00000000-0"
+
+# About Section
+# about_title: About Me
+about_profile_image: images/profile.jpg
+about_content: |
+  안녕하세요! 저는 HARRY입니다.
+
+  이곳에 자기소개를 작성해주세요. 마크다운을 지원하므로 [링크](http://example.com)나 <mark>하이라이트</mark>를 사용할 수 있습니다.
+
+content:
+  - title: Projects
+    layout: list
+    content:
+      - layout: left
+        border: weak
+        title: 프로젝트 이름
+        link: https://github.com/gorb6593
+        link_text: GitHub
+        additional_links:
+          - title: GitHub
+            icon: fab fa-github
+            url: https://github.com/gorb6593
+        quote: >
+          프로젝트 간단 설명
+        description: |
+          프로젝트에 대한 상세 설명을 여기에 작성해주세요.
+
+  - title: Experience
+    layout: list
+    content:
+      - layout: right
+        title: 회사명
+        sub_title: 직책
+        caption: 2020 - 현재
+        # link: https://company.com
+        quote: >
+          회사에 대한 간단한 설명
+        description: |
+          담당 업무에 대한 설명을 여기에 작성해주세요.
+
+  - title: Education
+    layout: list
+    content:
+      - layout: top-right
+        title: 학교명
+        sub_title: 전공
+        caption: 2016 - 2020
+        quote: >
+          학교 또는 전공에 대한 간단한 설명
+        description: |
+          학력에 대한 상세 설명을 여기에 작성해주세요.
+
+  - title: Skills
+    layout: text
+    content: |
+      여기에 보유 기술이나 관심사를 작성해주세요.
+
+      - **Programming Languages**: Java, Python, JavaScript
+      - **Frameworks**: Spring, React
+      - **Tools**: Git, Docker
+
+# Footer
+footer_show_references: true
+# references_title: References on request
 
 # Build settings
-markdown:       kramdown
+# theme: modern-resume-theme
 
-# Assets
 sass:
-  sass_dir:     _sass
-  style:        compressed
+  sass_dir: _sass
+  style: compressed
 
-# Gems
 plugins:
-  - jekyll-feed
-  - jekyll-paginate
-  # - jemoji #Uncomment this to allow emoji in your post
+  - jekyll-seo-tag
 
-# Permalinks
-permalink:      /:year-:month-:day/:title
-paginate:       20g
-
-# Related posts settings
-related_posts_section:
-  max_count:        10
-  min_common_tags:  2
-
-# Links to social media
-social:
-  email: gorb6593@gmail.com
-  github: https://github.com/gorb6593
-#  linkedin: https://ba.linkedin.com/
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - lib/
+  - scripts/
+  - docker-compose.yml
+  - backup_blog/
+  - bak/

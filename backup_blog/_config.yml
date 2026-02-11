@@ -1,0 +1,39 @@
+# Site settings
+title:          HARRY STORY
+description:    ""
+url:            https://gorb6593.github.io/
+
+# Author
+author:
+  name:         HARRY
+  email:        gorb6593@gmail.com
+  url:          https://gorb6593.github.io/
+
+# Build settings
+markdown:       kramdown
+
+# Assets
+sass:
+  sass_dir:     _sass
+  style:        compressed
+
+# Gems
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  # - jemoji #Uncomment this to allow emoji in your post
+
+# Permalinks
+permalink:      /:year-:month-:day/:title
+paginate:       20g
+
+# Related posts settings
+related_posts_section:
+  max_count:        10
+  min_common_tags:  2
+
+# Links to social media
+social:
+  email: gorb6593@gmail.com
+  github: https://github.com/gorb6593
+#  linkedin: https://ba.linkedin.com/
