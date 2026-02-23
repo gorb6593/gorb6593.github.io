@@ -147,6 +147,9 @@ content:
           - title: App Store
             icon: fab fa-app-store
             url: https://apps.apple.com/kr/app/아이캠/id6755982767
+          - title: Play Store
+            icon: fab fa-google-play
+            url: https://play.google.com/store/apps/developer?id=이해규
         description: |
           **CCTV 모니터링 앱 (Flutter)**
           - 사업 전체 프로세스 경험 (기획 → 개발 → 운영 → 마케팅)
