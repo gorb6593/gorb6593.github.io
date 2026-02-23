@@ -9,7 +9,7 @@ name: 이해규
 title: Backend Developer
 email: gorb6593@naver.com
 phone: 010-8613-9192
-website: https://gorb6593.github.io
+#website: https://gorb6593.github.io
 
 # Dark Mode (true/false/never)
 darkmode: false
@@ -43,65 +43,64 @@ content:
         link: https://www.kwic.co.kr/main.do
         caption: 2025.03 ~ 현재
         description: |
-          요양 서비스 플랫폼 (일일 활성 사용자 X,XXX명, 월 XX만 건 API 요청)
-
-          **이지케어 앱 신규개발** (2025.12 ~ 2026.01)
+          요양 서비스 플랫폼 (전체 주간보호기관 중 약 10% 고객 보유)
+          
+          **요양 시스템 전면 리뉴얼** (주·야간보호 ERP 2025.03 ~ 2026.03)
+          - **PHP → Java Spring Boot, Vue.js 전환** 마이그레이션 주도
+          - OzReport (PDF 다운로드 및 인쇄) 연동 및
+          - 내부 관리자 페이지 개발
+          - 공단 스크래핑 개발 및 연동
+          
+          **이지케어 앱 신규개발** (2025.12 ~ 2026.03)
           - 레거시 Flutter 앱을 최신화하고 기존 웹뷰 페이지 개선작업
           - 앱 고유 기능(푸시 알림, 카메라 등) 활성화 및 UX 개선
-          - FCM 기반 푸시 알림 시스템 구축, 앱 로딩 속도 XX% 개선
-
-          **요양 시스템 전면 리뉴얼** (2025.03 ~ 2025.12)
-          - **PHP → Java Spring Boot, Vue.js 전환** 마이그레이션 주도 (총 XXX개 API, XX개 테이블)
-          - 레거시 OzReport 연동 시스템 재설계: 동기 → 비동기 처리로 리포트 생성 시간 XX% 단축
-          - 기획 단계부터 참여하여 개발 일정 및 우선순위 조율
+          - FCM 기반 푸시 알림 시스템 구축
 
       - layout: left
         title: 리드넘버
         link: https://readnumber.com
         caption: 2023.11 ~ 2025.02
         description: |
-          **고객수 5,000명**의 세무 서비스 플랫폼 (월 XX만 건 스크래핑, 일 X,XXX건 API 호출)
+          **고객수 5,000명**의 세무 서비스 플랫폼 (일 500만 건 스크래핑)
 
           **부가세/종합소득세 신고 시스템 고도화** (2024.01 ~ 2024.05)
           - 홈택스/배달앱 API 연동으로 매출 데이터 **자동 수집 시스템** 구축
           - Spring Batch 기반 데이터 검증/전처리 자동화로 **신고 준비 기간 75% 단축** (4주 → 1주)
-          - 기술 스택: Java8, Spring Boot 2.1, MyBatis, MySQL, KT Cloud
 
           **신고 상황 알리미 서비스** (2024.06)
           - 종합소득세/부가가치세 신고 진행 현황 **실시간 모니터링 시스템** 구축
-          - SSE(Server-Sent Events) 기반 실시간 상태 업데이트 구현
-          - 서비스 오픈 후 **누적 방문 1만회 이상** 달성 (전체 고객 4,000명 대비 250% 도달)
-          - 기술 스택: Java17, Spring Boot 3.2, JPA, MySQL8, AWS
+          - 서비스 오픈 후 **누적 방문 1만회 이상** 달성 (전체 고객 5,000명 대비 200% 도달)
 
+          **서버 안정화 작업** (2024.08 ~ 2025.10)
+          - KT Cloud -> AWS 서버 이전 작업
+          - 45개의 스크래핑 서버 -> 1개의 서버에 통합 및 안정화
+          
           **레거시 시스템 개선 및 유지보수** (2024.01 ~ 2025.02)
           - 수임동의 프로세스 자동화로 **고객 등록 시간 70% 단축**
           - 고객 상태 자동변경 배치 고도화로 **상태 관리 정확도 100%** 달성
-          - 스크래핑 서버 다중화: Redis 기반 작업 큐 도입, X대 서버 로드밸런싱으로 처리량 XX% 향상
-
-          **트러블슈팅**: 신고 시즌 트래픽 폭주로 스크래핑 서버 장애 발생 → 재시도 로직 및 서킷브레이커 패턴 도입으로 장애 복구 시간 XX분 → X분으로 단축
 
       - layout: left
         title: 챔프스터디(해커스)
         link: https://www.hackers.com
         sub_title: 통합인프라개발팀
-        caption: 2022.08 ~ 2023.12 (1년 5개월)
+        caption: 2022.08 ~ 2023.11
         description: |
-          **해커스** 교육 플랫폼 (일일 방문자 XX만 명, 동시 접속 X,XXX명)
+          **해커스** 교육 플랫폼 (연 1200억 매출액)
 
           **합격/불합격 인증 서비스 개발** (2023.01 ~ 2023.11)
-          - 자격증 시험 응시생 간 점수 비교 서비스 구축 (누적 참여자 X만 명)
-          - 발표 전 2~3달 시점에서 합격 가능성 예측 정보 제공
+          - 자격증 시험 응시생 간 점수 비교 서비스 구축 (누적 참여자 800명)
+          - 발표 전 미리 합격 가능성 예측 정보 제공
           - 관리자용 사용자 정보 관리 기능 개발
 
           **모의고사 시스템 개발**
-          - 모의고사 선택 및 응시 서비스 전체 설계/개발 (총 XX개 과목, XXX개 문제 관리)
+          - 모의고사 선택 및 응시 서비스 전체 설계/개발
           - 관리자(강사)용 문제 관리 시스템 구축
-          - Chart.js 기반 응시생 데이터 비교/분석 **시각화 대시보드** 개발
+          - 데이터 비교/분석 **시각화 대시보드** 개발
 
           **통합 API 개발 및 유지보수** (2022.08 ~ 2023.11)
-          - 해커스 전체 사이트 **공통 API** 설계 및 개발 (XX개 사이트 연동)
-          - 개정 강의 지급, 신규 쿠폰 지급 등 전 사이트 적용
-          - 선착순 이벤트 동시성 처리: Redis 분산 락 적용으로 중복 지급 방지
+          - 해커스 전체 사이트 유지보수
+          - 해커스 전체 사이트 **공통 API** 설계 및 개발 (쿠폰 및 권한)
+          - 각종 이벤트 전담 개발 
 
       - layout: left
         title: 널리소프트
@@ -149,9 +148,9 @@ content:
             icon: fab fa-app-store
             url: https://apps.apple.com/kr/app/아이캠/id6755982767
         description: |
-          **CCTV 모니터링 앱**
-          - 기획, 개발, 마케팅까지 1인 개발 프로젝트
-          - Flutter 기반 크로스 플랫폼 앱
+          **CCTV 모니터링 앱 (Flutter)**
+          - 사업 전체 프로세스 경험 (기획 → 개발 → 운영 → 마케팅)
+          - 스마트폰에 있는 카메라를 이용한 촬영 및 실시간 스트리밍
 
       - layout: left
         title: 마음기록
@@ -162,9 +161,9 @@ content:
             icon: fab fa-app-store
             url: https://apps.apple.com/kr/app/마음기록/id6753328068
         description: |
-          **상담 및 채팅 앱**
-          - 1인 개발 프로젝트
+          **상담 및 채팅 앱 (Flutter)**
           - 사업 전체 프로세스 경험 (기획 → 개발 → 운영 → 마케팅)
+          - 실시간 채팅, 예약, 기분 기록이 있는 상담앱
 
   - title: Skill
     layout: text
@@ -172,10 +171,9 @@ content:
       현재 업무에 사용 중이거나 사용했던 기술들입니다.
 
       **Backend**
-      - Java, Spring Boot, Spring MVC, Spring Batch, Spring Data JPA
-      - JPA, Querydsl, MyBatis, Hibernate
-      - Junit, Mockito
-      - Gradle, Maven
+      - Java, Spring Boot, PHP 
+      - JPA, Querydsl, MyBatis
+      - Gradle
 
       **DevOps**
       - MySQL, MariaDB
@@ -185,6 +183,8 @@ content:
 
       **Frontend**
       - JavaScript, Vue.js
+      
+      **APP
       - Flutter
 
 #  - title: Education
