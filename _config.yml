@@ -24,7 +24,7 @@ github_username: gorb6593
 #    url: https://harrystroy.tistory.com
 
 # About Section
-#about_profile_image: images/profile.jpg
+about_profile_image: images/profile.jpg
 about_content: |
   Java & Spring Boot / Vue & Javascript, AWS 기반의 **5년차 백엔드 개발자**입니다.
 
