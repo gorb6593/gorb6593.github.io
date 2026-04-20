@@ -1,27 +1,21 @@
 {% for item in include.content %}
   {% if item.compact %}
-  <div class="compact-list-item">
-    {%- if item.title_link -%}
-    <a class="compact-row-link" href="{{ item.title_link | relative_url }}">
-      <div class="compact-list-main">
-        <h4 id="{{ item.title | slugify }}" class="compact-list-title">{{ item.title }}</h4>
-        {%- if item.sub_title -%}<p class="compact-list-sub">{{ item.sub_title }}</p>{%- endif -%}
-      </div>
-    </a>
-    {%- else -%}
+  <div
+    class="compact-list-item{% if item.title_link %} compact-list-item--clickable{% endif %}"
+    {% if item.title_link %}role="link" tabindex="0" onclick="window.location.href='{{ item.title_link | relative_url }}'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='{{ item.title_link | relative_url }}';}"{% endif %}
+  >
     <div class="compact-list-main">
       <h4 id="{{ item.title | slugify }}" class="compact-list-title">{{ item.title }}</h4>
       {%- if item.sub_title -%}<p class="compact-list-sub">{{ item.sub_title }}</p>{%- endif -%}
     </div>
-    {%- endif -%}
     <div class="compact-list-meta">
       {%- if item.store_link -%}
-        {% include a.html href=item.store_link class="compact-list-badge compact-list-badge--link" %}
+        <a href="{{ item.store_link }}" target="_blank" rel="noopener" class="compact-list-badge compact-list-badge--link" onclick="event.stopPropagation()">
           {{ item.store_label | default: "App Store" }}
         </a>
       {%- endif -%}
       {%- if item.android_link -%}
-        {% include a.html href=item.android_link class="compact-list-badge compact-list-badge--link compact-list-badge--android" %}
+        <a href="{{ item.android_link }}" target="_blank" rel="noopener" class="compact-list-badge compact-list-badge--link compact-list-badge--android" onclick="event.stopPropagation()">
           {{ item.android_label | default: "Android" }}
         </a>
       {%- endif -%}

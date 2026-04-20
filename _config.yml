@@ -49,18 +49,18 @@ content:
         description: |
           요양 서비스 플랫폼 (전체 주간보호기관 중 약 10% 고객 보유)
           
-          **요양 시스템 전면 리뉴얼** (주·야간보호 ERP 2025.03 ~ 2025.12)
+          [**요양 시스템 전면 리뉴얼**](/2024/04/10/care-erp-renewal-retrospective.html) (주·야간보호 ERP 2025.03 ~ 2025.12)
           - **PHP → Java Spring Boot, Vue.js 전환** 마이그레이션 주도
           - OzReport (PDF 다운로드 및 인쇄) 연동 및
           - 내부 관리자 페이지 개발
           - 공단 스크래핑 개발 및 연동
           
-          **이지케어 앱 신규개발** (2025.12 ~ 2026.02)
+          [**이지케어 앱 신규개발**](/2024/04/11/easycare-app-launch-retrospective.html) (2025.12 ~ 2026.02)
           - 레거시 Flutter 앱을 현대화 
           - FCM 기반 푸시 알림 시스템 구축
           - 웹뷰 형태의 서비스에 주·야간보호 추가
 
-          **요양 시스템 고도화** (주·야간보호 ERP 2026.02 ~ 2026.05)
+          [**요양 시스템 고도화**](/2024/04/12/care-erp-advancement-retrospective.html) (주·야간보호 ERP 2026.02 ~ 2026.05)
           - NICE 결제 연동 및 관리자 페이지 개발
           - AI 업무 지원 기능 추가
           - 세무 서비스 추가 개발
@@ -72,7 +72,7 @@ content:
         description: |
           **고객수 5,000명**의 세무 서비스 플랫폼 (일 500만 건 스크래핑)
 
-          **부가세/종합소득세 신고 시스템 고도화** (2024.01 ~ 2024.05)
+          [**부가세/종합소득세 신고 시스템 고도화**](/2024/04/13/tax-filing-system-retrospective.html) (2024.01 ~ 2024.05)
           - 홈택스/배달앱 API 연동으로 매출 데이터 **자동 수집 시스템** 구축
           - Spring Batch 기반 데이터 검증/전처리 자동화로 **신고 준비 기간 75% 단축** (4주 → 1주)
 
@@ -135,13 +135,14 @@ content:
       - layout: left
         title: 아이캠
         compact: true
+        badge: 개인 프로젝트
         sub_title: CCTV 모니터링 앱
         caption: 2024
         title_link: /2024/04/20/icam-product-story.html
         store_link: https://apps.apple.com/kr/app/아이캠/id6755982767
-        store_label: App Store
+        store_label: App Store 바로가기
         android_link: https://play.google.com/store/apps/developer?id=이해규
-        android_label: Android
+        android_label: Android 바로가기
         additional_links:
           - title: App Store
             icon: fab fa-app-store
@@ -157,11 +158,12 @@ content:
       - layout: left
         title: 마음기록
         compact: true
+        badge: 개인 프로젝트
         sub_title: 상담 및 채팅 앱
         caption: 2024
         title_link: /2024/04/20/maeumgirok-product-story.html
         store_link: https://apps.apple.com/kr/app/마음기록/id6753328068
-        store_label: App Store
+        store_label: App Store 바로가기
         additional_links:
           - title: App Store
             icon: fab fa-app-store
@@ -174,7 +176,7 @@ content:
       - layout: left
         title: 고객 등록 프로세스 개선
         compact: true
-        badge: CASE
+        badge: 리드넘버
         sub_title: 세무 플랫폼 운영 효율화 사례
         caption: 2024.03
         title_link: /2024/04/20/customer-registration-flow-improvement.html
