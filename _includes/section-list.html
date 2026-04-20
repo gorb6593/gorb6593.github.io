@@ -1,27 +1,30 @@
 {% for item in include.content %}
   {% if item.compact %}
   <div class="compact-list-item">
-    <div class="compact-list-main">
-      {%- if item.title_link -%}
-        <h4 id="{{ item.title | slugify }}" class="compact-list-title">{% include a.html href=item.title_link class="compact-title-link" %}{{ item.title }}</a></h4>
-      {%- else -%}
+    {%- if item.title_link -%}
+    <a class="compact-row-link" href="{{ item.title_link | relative_url }}">
+      <div class="compact-list-main">
         <h4 id="{{ item.title | slugify }}" class="compact-list-title">{{ item.title }}</h4>
-      {%- endif -%}
-      {%- if item.sub_title -%}<p class="compact-list-sub">{{ item.sub_title }}</p>{%- endif -%}
-      <div class="compact-list-actions">
-        {%- if item.detail_link -%}
-          {% include a.html href=item.detail_link class="compact-action-link" %}
-            상세 보기
-          </a>
-        {%- endif -%}
-        {%- if item.link -%}
-          {% include a.html href=item.link class="compact-action-link compact-action-link--external" %}
-            {{ item.link_text | default: "바로가기" }}
-          </a>
-        {%- endif -%}
+        {%- if item.sub_title -%}<p class="compact-list-sub">{{ item.sub_title }}</p>{%- endif -%}
       </div>
+    </a>
+    {%- else -%}
+    <div class="compact-list-main">
+      <h4 id="{{ item.title | slugify }}" class="compact-list-title">{{ item.title }}</h4>
+      {%- if item.sub_title -%}<p class="compact-list-sub">{{ item.sub_title }}</p>{%- endif -%}
     </div>
+    {%- endif -%}
     <div class="compact-list-meta">
+      {%- if item.store_link -%}
+        {% include a.html href=item.store_link class="compact-list-badge compact-list-badge--link" %}
+          {{ item.store_label | default: "App Store" }}
+        </a>
+      {%- endif -%}
+      {%- if item.android_link -%}
+        {% include a.html href=item.android_link class="compact-list-badge compact-list-badge--link compact-list-badge--android" %}
+          {{ item.android_label | default: "Android" }}
+        </a>
+      {%- endif -%}
       {%- if item.badge -%}<span class="compact-list-badge">{{ item.badge }}</span>{%- endif -%}
       {%- if item.caption -%}<span class="compact-list-date">{{ item.caption }}</span>{%- endif -%}
     </div>

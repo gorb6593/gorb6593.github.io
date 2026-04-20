@@ -6,7 +6,7 @@ version: 2
 
 # Personal info
 name: 이해규
-title: Backend Developer
+title: Software Engineer
 email: gorb6593@naver.com
 phone: 010-8613-9192
 #website: https://gorb6593.github.io
@@ -135,14 +135,13 @@ content:
       - layout: left
         title: 아이캠
         compact: true
-        badge: APP
-        link: https://apps.apple.com/kr/app/아이캠/id6755982767
-        link_text: App Store
         sub_title: CCTV 모니터링 앱
         caption: 2024
         title_link: /2024/04/20/icam-product-story.html
-        detail_link: /2024/04/20/icam-product-story.html
-        detail_link_text: 상세 보기
+        store_link: https://apps.apple.com/kr/app/아이캠/id6755982767
+        store_label: App Store
+        android_link: https://play.google.com/store/apps/developer?id=이해규
+        android_label: Android
         additional_links:
           - title: App Store
             icon: fab fa-app-store
@@ -158,14 +157,11 @@ content:
       - layout: left
         title: 마음기록
         compact: true
-        badge: APP
-        link: https://apps.apple.com/kr/app/마음기록/id6753328068
-        link_text: App Store
         sub_title: 상담 및 채팅 앱
         caption: 2024
         title_link: /2024/04/20/maeumgirok-product-story.html
-        detail_link: /2024/04/20/maeumgirok-product-story.html
-        detail_link_text: 상세 보기
+        store_link: https://apps.apple.com/kr/app/마음기록/id6753328068
+        store_label: App Store
         additional_links:
           - title: App Store
             icon: fab fa-app-store
@@ -182,8 +178,6 @@ content:
         sub_title: 세무 플랫폼 운영 효율화 사례
         caption: 2024.03
         title_link: /2024/04/20/customer-registration-flow-improvement.html
-        detail_link: /2024/04/20/customer-registration-flow-improvement.html
-        detail_link_text: 상세 보기
         description: |
           **등록 절차를 다시 설계해 고객 등록 시간을 70% 단축한 개선 사례입니다.**
 

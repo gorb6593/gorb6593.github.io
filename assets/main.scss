@@ -76,6 +76,15 @@
   flex: 1 1 auto;
 }
 
+.list-container .compact-row-link,
+.list-container .compact-row-link:hover {
+  display: block;
+  min-width: 0;
+  flex: 1 1 auto;
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
 .list-container .compact-list-title {
   margin: 0 !important;
   font-size: 2rem !important;
@@ -105,26 +114,6 @@
   color: #666666 !important;
 }
 
-.list-container .compact-list-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 10px;
-}
-
-.list-container .compact-action-link,
-.list-container .compact-action-link:hover {
-  color: #5f5f5f !important;
-  font-size: 1.15rem !important;
-  font-style: normal !important;
-  text-decoration: none !important;
-}
-
-.list-container .compact-action-link:hover {
-  color: #111111 !important;
-  text-decoration: underline !important;
-}
-
 .list-container .compact-list-meta {
   display: flex;
   align-items: center;
@@ -141,6 +130,26 @@
   color: #8c6a1c;
   font-size: 1rem;
   font-weight: 600;
+}
+
+.list-container .compact-list-badge--link,
+.list-container .compact-list-badge--link:hover {
+  text-decoration: none !important;
+}
+
+.list-container .compact-list-badge--link:hover {
+  background: #ead7ae;
+  color: #6f5210;
+}
+
+.list-container .compact-list-badge--android {
+  background: #e2f0de;
+  color: #2e6b33;
+}
+
+.list-container .compact-list-badge--android:hover {
+  background: #cee7c8;
+  color: #245628;
 }
 
 .list-container .compact-list-date {
@@ -269,6 +278,7 @@
 
   .list-container .compact-list-meta {
     gap: 8px;
+    flex-wrap: wrap;
   }
 
   .post-title {
