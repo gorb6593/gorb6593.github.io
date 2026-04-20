@@ -136,6 +136,11 @@ content:
         title: 아이캠
         link: https://apps.apple.com/kr/app/아이캠/id6755982767
         link_text: App Store
+        sub_title: CCTV 모니터링 앱
+        caption: 2024
+        title_link: /2026/04/20/icam-product-story.html
+        detail_link: /2026/04/20/icam-product-story.html
+        detail_link_text: 상세 보기
         additional_links:
           - title: App Store
             icon: fab fa-app-store
@@ -152,6 +157,11 @@ content:
         title: 마음기록
         link: https://apps.apple.com/kr/app/마음기록/id6753328068
         link_text: App Store
+        sub_title: 상담 및 채팅 앱
+        caption: 2024
+        title_link: /2026/04/20/maeumgirok-product-story.html
+        detail_link: /2026/04/20/maeumgirok-product-story.html
+        detail_link_text: 상세 보기
         additional_links:
           - title: App Store
             icon: fab fa-app-store
