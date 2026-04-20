@@ -50,6 +50,6 @@ tags: ["Product", "Case Study"]
 
 예시 파일:
 
-- `_posts/2026-04-20-icam-product-story.md`
-- `_posts/2026-04-20-maeumgirok-product-story.md`
-- `_posts/2026-04-20-customer-registration-flow-improvement.md`
+- `_posts/2024-04-20-icam-product-story.md`
+- `_posts/2024-04-20-maeumgirok-product-story.md`
+- `_posts/2024-04-20-customer-registration-flow-improvement.md`

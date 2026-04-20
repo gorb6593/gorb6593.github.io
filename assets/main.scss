@@ -58,7 +58,7 @@
   font-size: 1.4rem;
 }
 
-.compact-list-item {
+.list-container .compact-list-item {
   display: flex;
   justify-content: space-between;
   gap: 16px;
@@ -67,60 +67,64 @@
   border-bottom: 1px solid #e7e7e7;
 }
 
-.compact-list-item:first-child {
+.list-container .compact-list-item:first-child {
   border-top: 1px solid #e7e7e7;
 }
 
-.compact-list-main {
+.list-container .compact-list-main {
   min-width: 0;
+  flex: 1 1 auto;
 }
 
-.compact-list-title {
-  margin: 0;
-  font-size: 2.2rem;
-  font-weight: 700;
-  line-height: 1.45;
-  letter-spacing: -0.02em;
+.list-container .compact-list-title {
+  margin: 0 !important;
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  line-height: 1.45 !important;
+  letter-spacing: -0.02em !important;
+  color: #171717 !important;
 }
 
-.compact-title-link,
-.compact-title-link:hover {
-  color: inherit;
-  font-style: normal;
-  text-decoration: none;
+.list-container .compact-list-title .compact-title-link,
+.list-container .compact-list-title .compact-title-link:hover {
+  color: #171717 !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
 }
 
-.compact-title-link:hover {
-  color: #111111;
-  text-decoration: underline;
+.list-container .compact-list-title .compact-title-link:hover {
+  color: #111111 !important;
+  text-decoration: underline !important;
 }
 
-.compact-list-sub {
-  margin: 6px 0 0;
-  font-size: 1.45rem;
-  color: #666666;
+.list-container .compact-list-sub {
+  margin: 6px 0 0 !important;
+  font-size: 1.3rem !important;
+  line-height: 1.55 !important;
+  color: #666666 !important;
 }
 
-.compact-list-meta {
+.list-container .compact-list-meta {
   display: flex;
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
 }
 
-.compact-list-badge {
+.list-container .compact-list-badge {
   display: inline-flex;
   align-items: center;
   padding: 5px 10px;
   border-radius: 999px;
   background: #f4e9d3;
   color: #8c6a1c;
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-weight: 600;
 }
 
-.compact-list-date {
-  font-size: 1.3rem;
+.list-container .compact-list-date {
+  font-size: 1.1rem;
   color: #777777;
 }
 
@@ -138,20 +142,20 @@
     font-size: 1.6rem;
   }
 
-  .compact-list-item {
+  .list-container .compact-list-item {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .compact-list-title {
-    font-size: 1.9rem;
+  .list-container .compact-list-title {
+    font-size: 1.7rem !important;
   }
 
-  .compact-list-sub {
-    font-size: 1.3rem;
+  .list-container .compact-list-sub {
+    font-size: 1.2rem !important;
   }
 
-  .compact-list-meta {
+  .list-container .compact-list-meta {
     gap: 8px;
   }
 }
