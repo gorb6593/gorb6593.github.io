@@ -8,6 +8,18 @@
         <h4 id="{{ item.title | slugify }}" class="compact-list-title">{{ item.title }}</h4>
       {%- endif -%}
       {%- if item.sub_title -%}<p class="compact-list-sub">{{ item.sub_title }}</p>{%- endif -%}
+      <div class="compact-list-actions">
+        {%- if item.detail_link -%}
+          {% include a.html href=item.detail_link class="compact-action-link" %}
+            상세 보기
+          </a>
+        {%- endif -%}
+        {%- if item.link -%}
+          {% include a.html href=item.link class="compact-action-link compact-action-link--external" %}
+            {{ item.link_text | default: "바로가기" }}
+          </a>
+        {%- endif -%}
+      </div>
     </div>
     <div class="compact-list-meta">
       {%- if item.badge -%}<span class="compact-list-badge">{{ item.badge }}</span>{%- endif -%}

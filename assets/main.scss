@@ -105,6 +105,26 @@
   color: #666666 !important;
 }
 
+.list-container .compact-list-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.list-container .compact-action-link,
+.list-container .compact-action-link:hover {
+  color: #5f5f5f !important;
+  font-size: 1.15rem !important;
+  font-style: normal !important;
+  text-decoration: none !important;
+}
+
+.list-container .compact-action-link:hover {
+  color: #111111 !important;
+  text-decoration: underline !important;
+}
+
 .list-container .compact-list-meta {
   display: flex;
   align-items: center;
@@ -126,6 +146,94 @@
 .list-container .compact-list-date {
   font-size: 1.1rem;
   color: #777777;
+}
+
+.post-page {
+  padding-top: 40px;
+}
+
+.post-shell {
+  max-width: 860px;
+}
+
+.post-back,
+.post-back:hover {
+  display: inline-flex;
+  margin-bottom: 18px;
+  color: #666666;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+.post-back:hover {
+  color: #111111;
+  text-decoration: underline;
+}
+
+.post-article {
+  padding-top: 10px;
+}
+
+.post-meta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #777777;
+}
+
+.post-title {
+  margin: 0 0 10px !important;
+  font-size: 3.6rem !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.03em !important;
+  color: #111111 !important;
+  text-align: left !important;
+}
+
+.post-author {
+  margin: 0 0 24px;
+  font-size: 1.4rem;
+  color: #666666;
+}
+
+.post-body {
+  font-size: 1.7rem;
+  line-height: 1.9;
+  color: #333333;
+}
+
+.post-body h2 {
+  margin-top: 34px;
+  margin-bottom: 14px;
+  font-size: 2.3rem;
+  line-height: 1.4;
+  color: #111111;
+}
+
+.post-body h3 {
+  margin-top: 28px;
+  margin-bottom: 12px;
+  font-size: 1.9rem;
+  line-height: 1.4;
+  color: #111111;
+}
+
+.post-body p,
+.post-body ul,
+.post-body ol {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.post-body ul,
+.post-body ol {
+  padding-left: 24px;
+}
+
+.post-body li {
+  margin-bottom: 8px;
 }
 
 @media screen and (max-width: 767px) {
@@ -155,7 +263,19 @@
     font-size: 1.2rem !important;
   }
 
+  .list-container .compact-list-actions {
+    gap: 10px;
+  }
+
   .list-container .compact-list-meta {
     gap: 8px;
+  }
+
+  .post-title {
+    font-size: 2.8rem !important;
+  }
+
+  .post-body {
+    font-size: 1.5rem;
   }
 }

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'ko' }}">
+{%- include head.html -%}
+<body class="{% if site.darkmode == true and site.darkmode != 'never' %}dark{% endif %}">
+  <main class="page-content post-page" aria-label="Content">
+    <div class="wrapper">
+      <div class="container post-shell">
+        <a class="post-back" href="{{ '/' | relative_url }}">← 홈으로</a>
+
+        <article class="post-article">
+          <div class="post-meta">
+            {%- if page.date -%}
+              <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y.%m.%d" }}</time>
+            {%- endif -%}
+            {%- if page.tags and page.tags.size > 0 -%}
+              <span>·</span>
+              <span>{{ page.tags | join: " · " }}</span>
+            {%- endif -%}
+          </div>
+
+          <h1 class="post-title">{{ page.title }}</h1>
+
+          {%- if page.author -%}
+            <p class="post-author">{{ page.author }}</p>
+          {%- endif -%}
+
+          <div class="post-body">
+            {{ content }}
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
