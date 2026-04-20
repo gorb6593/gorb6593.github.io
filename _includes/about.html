@@ -1,6 +1,5 @@
 <div class="container intro-container">
-  <h3 id="{{ site.about_title | slugify | default: 'about-me' }}">{{ site.about_title | default:
-  "About Me" }}</h3>
+  <h3 id="{{ site.about_title | slugify | default: 'about-me' }}">{{ site.about_title | default: "About Me" }}</h3>
   <div class="row clearfix">
     {%- if site.about_profile_image -%}
       <div class="col-xs-12 col-sm-4 col-md-3 no-print">
@@ -8,7 +7,19 @@
       </div>
     {%- endif -%}
     <div class="{{ 'col-xs-12 ' }}{%- if site.about_profile_image -%}col-sm-8 col-md-9 col-print-12{%- endif -%}">
-      {{ site.about_content | strip | markdownify }}
+      {%- if site.about_highlights -%}
+        <div class="about-highlights">
+          {% for item in site.about_highlights %}
+            <div class="about-highlight">
+              <div class="about-highlight-title">{{ item.title }}</div>
+              <p>{{ item.description }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      {%- endif -%}
+      {%- if site.about_content and site.about_content != '' -%}
+        <div class="about-content">{{ site.about_content | strip | markdownify }}</div>
+      {%- endif -%}
     </div>
   </div>
 </div>

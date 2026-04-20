@@ -1,7 +1,11 @@
 {% for item in include.content %}
   <div class="row clearfix layout layout-{{item.layout | default: 'left'}} border-{{item.border | default: 'no'}}">
     <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-      <h4 id="{{ item.title | slugify }}">{{ item.title }}</h4>
+      {%- if item.title_link -%}
+        <h4 id="{{ item.title | slugify }}">{% include a.html href=item.title_link class="title-link" %}{{ item.title }}</a></h4>
+      {%- else -%}
+        <h4 id="{{ item.title | slugify }}">{{ item.title }}</h4>
+      {%- endif -%}
       {%- if item.sub_title -%}<p><b>{{ item.sub_title }}</b></p>{%- endif -%}
       {%- if item.caption -%}<p>{{ item.caption }}</p>{%- endif -%}
 
@@ -9,6 +13,14 @@
         {% include a.html href=item.link class="link" %}
           {%- if item.link_text -%}{{ item.link_text }}{%- else -%}{{ item.link }}{%- endif -%}
         </a>
+      {%- endif -%}
+
+      {%- if item.detail_link -%}
+        <p>
+          {% include a.html href=item.detail_link class="link detail-link" %}
+            {{ item.detail_link_text | default: "상세 보기" }}
+          </a>
+        </p>
       {%- endif -%}
 
       <p class="no-print aditional-links">

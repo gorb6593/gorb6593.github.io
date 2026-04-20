@@ -3,3 +3,61 @@
 ---
 
 @import 'modern-resume-theme';
+
+.about-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.about-highlight {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 12px 0;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.about-highlight:last-child {
+  border-bottom: 0;
+}
+
+.about-highlight-title {
+  font-weight: 600;
+  color: #222222;
+  letter-spacing: -0.01em;
+}
+
+.about-highlight p {
+  margin: 0;
+  color: #555555;
+  line-height: 1.75;
+}
+
+.about-content {
+  margin-top: 20px;
+}
+
+.details .title-link,
+.details .title-link:hover {
+  color: inherit;
+  font-style: normal;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.details .title-link:hover {
+  text-decoration: underline;
+}
+
+.detail-link {
+  font-size: 1.4rem;
+}
+
+@media screen and (max-width: 767px) {
+  .about-highlight {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}

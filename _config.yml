@@ -25,13 +25,18 @@ github_username: gorb6593
 
 # About Section
 about_profile_image: images/profile.jpeg
-about_content: |
-  Java & Spring Boot / Vue & Javascript, AWS 기반의 **5년차 백엔드 개발자**입니다.
-
-  요양 플랫폼(기웅정보통신), 세무 플랫폼(리드넘버, 쌤157), 교육 플랫폼(챔프스터디)에서 **특정 시즌에 집중되는 대규모 트래픽** 환경에서 서버 개발을 진행했습니다.
-  다양한 언어와 환경에서 코드를 개선하는 것이 강점으로 그 과정에서 도메인을 빠르게 학습합니다.
-  기획과 소통을 당연하게 생각하며 **고객 등록 프로세스 개선으로 등록 시간 70% 단축**, **세무 신고 준비 기간 75% 단축** 등 비용 절감과 매출 증가를 기록했습니다.
-  현재 개인 앱을 개발/운영하며 기획부터 마케팅까지 전 과정을 경험하고 있습니다.
+about_content: ""
+about_highlights:
+  - title: 5년 차 백엔드 전문가
+    description: Java, Spring Boot, AWS 기반으로 안정적인 서버와 운영 시스템을 구축합니다.
+  - title: 사업 성과 지향
+    description: 고객 등록 시간 70% 단축 / 세무 신고 준비 기간 75% 단축으로 사업 성과 달성을 우선합니다.
+  - title: 복잡한 도메인 적응력
+    description: 세무, 교육 플랫폼의 복잡한 운영 구조를 빠르게 이해해 업무 효율을 극대화합니다.
+  - title: 소통을 돕는 개발자
+    description: 파편호환 정보를 체계적인 문서로 자산화 하고 사업과 개발을 이어주며 조직의 동반 성장을 이끕니다.
+  - title: 서비스 이해도
+    description: 개인 앱을 개발/운영하며 기획, 마케팅까지 전 과정을 경험하고 운영하며 광고를 통한 수익을 발생시키고 있습니다.
 
 content:
   - title: Experience
@@ -150,6 +155,20 @@ content:
           **상담 및 채팅 앱 (Flutter)**
           - 사업 전체 프로세스 경험 (기획 → 개발 → 운영 → 마케팅)
           - 실시간 채팅, 예약, 기분 기록이 있는 상담앱
+
+      - layout: left
+        title: 고객 등록 프로세스 개선
+        sub_title: 세무 플랫폼 운영 효율화 사례
+        caption: 2024.03
+        title_link: /2026/04/20/customer-registration-flow-improvement.html
+        detail_link: /2026/04/20/customer-registration-flow-improvement.html
+        detail_link_text: 상세 보기
+        description: |
+          **등록 절차를 다시 설계해 고객 등록 시간을 70% 단축한 개선 사례입니다.**
+
+          - 수임동의와 고객 상태 변경 과정을 자동화해 반복 업무를 줄였습니다.
+          - 운영팀 관점의 병목을 분석하고, 실제로 어떤 기준으로 개선했는지 정리했습니다.
+          - 앞으로 비슷한 글을 추가할 때 참고할 수 있는 예시 포맷입니다.
 
   - title: Skill
     layout: text
