@@ -134,6 +134,8 @@ content:
     content:
       - layout: left
         title: 아이캠
+        compact: true
+        badge: APP
         link: https://apps.apple.com/kr/app/아이캠/id6755982767
         link_text: App Store
         sub_title: CCTV 모니터링 앱
@@ -155,6 +157,8 @@ content:
 
       - layout: left
         title: 마음기록
+        compact: true
+        badge: APP
         link: https://apps.apple.com/kr/app/마음기록/id6753328068
         link_text: App Store
         sub_title: 상담 및 채팅 앱
@@ -173,6 +177,8 @@ content:
 
       - layout: left
         title: 고객 등록 프로세스 개선
+        compact: true
+        badge: CASE
         sub_title: 세무 플랫폼 운영 효율화 사례
         caption: 2024.03
         title_link: /2026/04/20/customer-registration-flow-improvement.html

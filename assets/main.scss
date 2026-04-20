@@ -58,6 +58,72 @@
   font-size: 1.4rem;
 }
 
+.compact-list-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.compact-list-item:first-child {
+  border-top: 1px solid #e7e7e7;
+}
+
+.compact-list-main {
+  min-width: 0;
+}
+
+.compact-list-title {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+}
+
+.compact-title-link,
+.compact-title-link:hover {
+  color: inherit;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.compact-title-link:hover {
+  color: #111111;
+  text-decoration: underline;
+}
+
+.compact-list-sub {
+  margin: 6px 0 0;
+  font-size: 1.45rem;
+  color: #666666;
+}
+
+.compact-list-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.compact-list-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #f4e9d3;
+  color: #8c6a1c;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.compact-list-date {
+  font-size: 1.3rem;
+  color: #777777;
+}
+
 @media screen and (max-width: 767px) {
   .about-highlight {
     grid-template-columns: 1fr;
@@ -70,5 +136,22 @@
 
   .about-highlight p {
     font-size: 1.6rem;
+  }
+
+  .compact-list-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .compact-list-title {
+    font-size: 1.9rem;
+  }
+
+  .compact-list-sub {
+    font-size: 1.3rem;
+  }
+
+  .compact-list-meta {
+    gap: 8px;
   }
 }
