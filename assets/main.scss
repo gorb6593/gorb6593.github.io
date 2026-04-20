@@ -86,6 +86,13 @@
   flex: 1 1 auto;
 }
 
+.list-container .compact-list-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  min-width: 0;
+}
+
 .list-container .compact-list-title {
   margin: 0 !important;
   font-size: 2rem !important;
@@ -109,10 +116,13 @@
 }
 
 .list-container .compact-list-sub {
-  margin: 6px 0 0 !important;
-  font-size: 1.3rem !important;
-  line-height: 1.55 !important;
+  margin: 0 !important;
+  font-size: 1.25rem !important;
+  line-height: 1.5 !important;
   color: #666666 !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .list-container .compact-list-meta {
@@ -266,12 +276,18 @@
     align-items: flex-start;
   }
 
+  .list-container .compact-list-heading {
+    display: block;
+  }
+
   .list-container .compact-list-title {
     font-size: 1.7rem !important;
   }
 
   .list-container .compact-list-sub {
+    margin-top: 4px !important;
     font-size: 1.2rem !important;
+    white-space: normal;
   }
 
   .list-container .compact-list-actions {

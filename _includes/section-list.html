@@ -5,8 +5,10 @@
     {% if item.title_link %}role="link" tabindex="0" onclick="window.location.href='{{ item.title_link | relative_url }}'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='{{ item.title_link | relative_url }}';}"{% endif %}
   >
     <div class="compact-list-main">
-      <h4 id="{{ item.title | slugify }}" class="compact-list-title">{{ item.title }}</h4>
-      {%- if item.sub_title -%}<p class="compact-list-sub">{{ item.sub_title }}</p>{%- endif -%}
+      <div class="compact-list-heading">
+        <h4 id="{{ item.title | slugify }}" class="compact-list-title">{{ item.title }}</h4>
+        {%- if item.sub_title -%}<p class="compact-list-sub">{{ item.sub_title }}</p>{%- endif -%}
+      </div>
     </div>
     <div class="compact-list-meta">
       {%- if item.store_link -%}

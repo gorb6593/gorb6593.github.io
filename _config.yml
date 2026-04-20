@@ -187,6 +187,38 @@ content:
           - 운영팀 관점의 병목을 분석하고, 실제로 어떤 기준으로 개선했는지 정리했습니다.
           - 앞으로 비슷한 글을 추가할 때 참고할 수 있는 예시 포맷입니다.
 
+      - layout: left
+        title: 요양 시스템 전면 리뉴얼
+        compact: true
+        badge: 기웅정보통신
+        sub_title: 주·야간보호 ERP 리뉴얼 회고
+        caption: 2024.04
+        title_link: /2024/04/10/care-erp-renewal-retrospective.html
+
+      - layout: left
+        title: 이지케어 앱 신규개발
+        compact: true
+        badge: 기웅정보통신
+        sub_title: Flutter 앱 현대화 및 푸시 알림 회고
+        caption: 2024.04
+        title_link: /2024/04/11/easycare-app-launch-retrospective.html
+
+      - layout: left
+        title: 요양 시스템 고도화
+        compact: true
+        badge: 기웅정보통신
+        sub_title: 결제 연동, 관리자 기능, AI 지원 회고
+        caption: 2024.04
+        title_link: /2024/04/12/care-erp-advancement-retrospective.html
+
+      - layout: left
+        title: 부가세/종합소득세 신고 시스템 고도화
+        compact: true
+        badge: 리드넘버
+        sub_title: Spring Batch 자동화로 신고 준비 기간 단축
+        caption: 2024.04
+        title_link: /2024/04/13/tax-filing-system-retrospective.html
+
   - title: Skill
     layout: text
     content: |
