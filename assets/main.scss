@@ -24,13 +24,16 @@
 }
 
 .about-highlight-title {
-  font-weight: 600;
-  color: #222222;
-  letter-spacing: -0.01em;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #1f1f1f;
+  letter-spacing: -0.02em;
 }
 
 .about-highlight p {
   margin: 0;
+  font-size: 1.7rem;
   color: #555555;
   line-height: 1.75;
 }
@@ -59,5 +62,13 @@
   .about-highlight {
     grid-template-columns: 1fr;
     gap: 6px;
+  }
+
+  .about-highlight-title {
+    font-size: 1.8rem;
+  }
+
+  .about-highlight p {
+    font-size: 1.6rem;
   }
 }
