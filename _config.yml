@@ -249,7 +249,10 @@ content:
       - Git, GitHub
 
       **Frontend**
-      - JavaScript, Vue.js, Flutter
+      - JavaScript, Vue.js
+      
+      **APP**
+      - Flutter
 
 #  - title: Education
 #    layout: list
