@@ -17,12 +17,8 @@
   var visitorStorageKey = 'portfolioVisitorId';
   var sessionStorageKey = 'portfolioSessionId';
   var pageTrackedKey = 'portfolioTracked:' + window.location.pathname + window.location.search;
-  var scrollBucketsKey = 'portfolioScrollBuckets:' + window.location.pathname + window.location.search;
   var visitorId = ensureStorageValue(localStorageRef, visitorStorageKey);
   var sessionId = ensureStorageValue(sessionStorageRef, sessionStorageKey);
-  var pageStartTime = Date.now();
-  var maxScrollBucket = 0;
-  var exitTracked = false;
   var params = new URLSearchParams(window.location.search);
 
   if (!sessionStorageRef.getItem(pageTrackedKey)) {
@@ -34,13 +30,6 @@
   }
 
   document.addEventListener('click', handleClickEvent, true);
-  window.addEventListener('scroll', handleScrollEvent, { passive: true });
-  window.addEventListener('pagehide', handleExitEvent);
-  document.addEventListener('visibilitychange', function () {
-    if (document.visibilityState === 'hidden') {
-      handleExitEvent();
-    }
-  });
 
   function handleClickEvent(event) {
     var target = event.target.closest('[data-track-click="true"], a[href], [role="link"]');
@@ -59,45 +48,6 @@
       sectionName: sectionName,
       source: 'gorb6593.github.io'
     }, false);
-  }
-
-  function handleScrollEvent() {
-    var scrollHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
-    var viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
-    if (!scrollHeight || scrollHeight <= viewportHeight) {
-      return;
-    }
-
-    var currentBottom = window.scrollY + viewportHeight;
-    var ratio = Math.min(100, Math.round((currentBottom / scrollHeight) * 100));
-    var bucket = Math.floor(ratio / 25) * 25;
-    if (bucket < 25 || bucket <= maxScrollBucket) {
-      return;
-    }
-
-    maxScrollBucket = bucket;
-    sessionStorageRef.setItem(scrollBucketsKey, String(bucket));
-
-    sendTrackingEvent('scroll_depth', {
-      eventName: 'scroll-' + bucket,
-      sectionName: findCurrentSectionName(),
-      scrollDepthPercent: bucket,
-      source: 'gorb6593.github.io'
-    }, false);
-  }
-
-  function handleExitEvent() {
-    if (exitTracked) {
-      return;
-    }
-    exitTracked = true;
-
-    sendTrackingEvent('page_exit', {
-      eventName: 'page-exit',
-      durationMs: Date.now() - pageStartTime,
-      scrollDepthPercent: maxScrollBucket,
-      source: 'gorb6593.github.io'
-    }, true);
   }
 
   function sendTrackingEvent(eventType, extraPayload, useBeacon, onSuccess) {
@@ -141,8 +91,8 @@
       sectionName: extraPayload.sectionName || null,
       elementText: extraPayload.elementText || null,
       linkUrl: extraPayload.linkUrl || null,
-      durationMs: extraPayload.durationMs || null,
-      scrollDepthPercent: extraPayload.scrollDepthPercent || null,
+      durationMs: null,
+      scrollDepthPercent: null,
       pageTitle: document.title,
       pagePath: window.location.pathname,
       pageUrl: window.location.href,
@@ -218,20 +168,6 @@
   function findSectionName(element) {
     var section = element.closest('[data-track-section]');
     return section ? section.getAttribute('data-track-section') : null;
-  }
-
-  function findCurrentSectionName() {
-    var sections = document.querySelectorAll('[data-track-section]');
-    var viewportTop = window.scrollY;
-    var current = null;
-
-    sections.forEach(function (section) {
-      if (section.offsetTop <= viewportTop + 80) {
-        current = section.getAttribute('data-track-section');
-      }
-    });
-
-    return current;
   }
 
   function normalizeApiBase(url) {
