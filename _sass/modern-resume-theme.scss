@@ -46,6 +46,34 @@
   h3 {
     margin-bottom: 24px;
   }
+
+  .about-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .about-highlight {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ececec;
+
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    p {
+      margin-bottom: 0;
+      line-height: 1.45;
+    }
+  }
+
+  .about-highlight-title {
+    margin-bottom: 2px;
+    font-size: 1.7rem;
+    font-weight: 500;
+    line-height: 1.3;
+  }
 }
 
 .list-container {

@@ -174,29 +174,29 @@ content:
           - 사업 전체 프로세스 경험 (기획 → 개발 → 운영 → 마케팅)
           - 실시간 채팅, 예약, 기분 기록이 있는 상담앱
 
-      - layout: left
-        title: 기획자 없이 일하는 방법
-        compact: true
-        badge: 에세이
-        sub_title: 기획자 없는 환경에서 제품을 만드는 방식
-        caption: 2026.04
-        title_link: /2026/04/23/harry-1.html
-        description: |
-          **기획자 없이 혼자 기획과 개발을 함께 맡을 때 실제로 쓰는 방법을 정리한 글입니다.**
+#      - layout: left
+#        title: 기획자 없이 일하는 방법
+#        compact: true
+#        badge: 에세이
+#        sub_title: 기획자 없는 환경에서 제품을 만드는 방식
+#        caption: 2026.04
+#        title_link: /2026/04/23/harry-1.html
+#        description: |
+#          **기획자 없이 혼자 기획과 개발을 함께 맡을 때 실제로 쓰는 방법을 정리한 글입니다.**
 
-      - layout: left
-        title: 고객 등록 프로세스 개선
-        compact: true
-        badge: 리드넘버
-        sub_title: 세무 플랫폼 운영 효율화 사례
-        caption: 2024.03
-        title_link: /2024/03/01/rn-1.html
-        description: |
-          **등록 절차를 다시 설계해 고객 등록 시간을 70% 단축한 개선 사례입니다.**
-
-          - 수임동의와 고객 상태 변경 과정을 자동화해 반복 업무를 줄였습니다.
-          - 운영팀 관점의 병목을 분석하고, 실제로 어떤 기준으로 개선했는지 정리했습니다.
-          - 앞으로 비슷한 글을 추가할 때 참고할 수 있는 예시 포맷입니다.
+#      - layout: left
+#        title: 고객 등록 프로세스 개선
+#        compact: true
+#        badge: 리드넘버
+#        sub_title: 세무 플랫폼 운영 효율화 사례
+#        caption: 2024.03
+#        title_link: /2024/03/01/rn-1.html
+#        description: |
+#          **등록 절차를 다시 설계해 고객 등록 시간을 70% 단축한 개선 사례입니다.**
+#
+#          - 수임동의와 고객 상태 변경 과정을 자동화해 반복 업무를 줄였습니다.
+#          - 운영팀 관점의 병목을 분석하고, 실제로 어떤 기준으로 개선했는지 정리했습니다.
+#          - 앞으로 비슷한 글을 추가할 때 참고할 수 있는 예시 포맷입니다.
 
       - layout: left
         title: 요양 시스템 전면 리뉴얼
@@ -206,29 +206,29 @@ content:
         caption: 2024.04
         title_link:  https://www.notion.so/3497ef09c555804798d9cc34ed45ce53
 
-      - layout: left
-        title: 이지케어 앱 신규개발
-        compact: true
-        badge: 기웅정보통신
-        sub_title: Flutter 앱 현대화 및 푸시 알림 회고
-        caption: 2024.04
-        title_link: /2024/04/11/easycare-app-launch-retrospective.html
-
-      - layout: left
-        title: 요양 시스템 고도화
-        compact: true
-        badge: 기웅정보통신
-        sub_title: 결제 연동, 관리자 기능, AI 지원 회고
-        caption: 2024.04
-        title_link: /2024/04/12/care-erp-advancement-retrospective.html
-
-      - layout: left
-        title: 부가세/종합소득세 신고 시스템 고도화
-        compact: true
-        badge: 리드넘버
-        sub_title: Spring Batch 자동화로 신고 준비 기간 단축
-        caption: 2024.04
-        title_link: /2024/04/13/tax-filing-system-retrospective.html
+#      - layout: left
+#        title: 이지케어 앱 신규개발
+#        compact: true
+#        badge: 기웅정보통신
+#        sub_title: Flutter 앱 현대화 및 푸시 알림 회고
+#        caption: 2024.04
+#        title_link: /2024/04/11/easycare-app-launch-retrospective.html
+#
+#      - layout: left
+#        title: 요양 시스템 고도화
+#        compact: true
+#        badge: 기웅정보통신
+#        sub_title: 결제 연동, 관리자 기능, AI 지원 회고
+#        caption: 2024.04
+#        title_link: /2024/04/12/care-erp-advancement-retrospective.html
+#
+#      - layout: left
+#        title: 부가세/종합소득세 신고 시스템 고도화
+#        compact: true
+#        badge: 리드넘버
+#        sub_title: Spring Batch 자동화로 신고 준비 기간 단축
+#        caption: 2024.04
+#        title_link: /2024/04/13/tax-filing-system-retrospective.html
 
   - title: Skill
     layout: text
