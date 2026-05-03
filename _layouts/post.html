@@ -31,5 +31,9 @@
       </div>
     </div>
   </main>
+  <script>
+    window.TRACKING_API_BASE_URL = {{ site.tracking_api_base_url | jsonify }};
+  </script>
+  <script src="{{ '/assets/js/tracking.js' | relative_url }}"></script>
 </body>
 </html>

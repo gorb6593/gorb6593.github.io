@@ -18,6 +18,8 @@ darkmode: false
 linkedin_username: gorb6593
 github_username: gorb6593
 
+tracking_api_base_url: https://api.harryworlds.com
+
 # Additional icon links
 #additional_links:
 #  - title: Blog
