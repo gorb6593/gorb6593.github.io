@@ -4,8 +4,8 @@
 <body class="{% if site.darkmode == true and site.darkmode != 'never' %}dark{% endif %}">
   <main class="page-content post-page" aria-label="Content">
     <div class="wrapper">
-      <div class="container post-shell">
-        <a class="post-back" href="{{ '/' | relative_url }}">← 홈으로</a>
+      <div class="container post-shell page-section" data-track-section="post">
+        <a class="post-back" href="{{ '/' | relative_url }}" data-track-click="true" data-track-label="post-back-home">← 홈으로</a>
 
         <article class="post-article">
           <div class="post-meta">

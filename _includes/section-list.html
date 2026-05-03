@@ -2,7 +2,7 @@
   {% if item.compact %}
   <div
     class="compact-list-item{% if item.title_link %} compact-list-item--clickable{% endif %}"
-    {% if item.title_link %}role="link" tabindex="0" onclick="window.location.href='{{ item.title_link | relative_url }}'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='{{ item.title_link | relative_url }}';}"{% endif %}
+    {% if item.title_link %}role="link" tabindex="0" data-track-click="true" data-track-href="{{ item.title_link | relative_url }}" data-track-label="{{ item.title | escape }}" onclick="window.location.href='{{ item.title_link | relative_url }}'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='{{ item.title_link | relative_url }}';}"{% endif %}
   >
     <div class="compact-list-main">
       <div class="compact-list-heading">
@@ -29,7 +29,7 @@
   <div class="row clearfix layout layout-{{item.layout | default: 'left'}} border-{{item.border | default: 'no'}}">
     <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
       {%- if item.title_link -%}
-        <h4 id="{{ item.title | slugify }}">{% include a.html href=item.title_link class="title-link" %}{{ item.title }}</a></h4>
+        <h4 id="{{ item.title | slugify }}">{% include a.html href=item.title_link class="title-link" track_label=item.title content=item.title %}</h4>
       {%- else -%}
         <h4 id="{{ item.title | slugify }}">{{ item.title }}</h4>
       {%- endif -%}
@@ -37,24 +37,21 @@
       {%- if item.caption -%}<p>{{ item.caption }}</p>{%- endif -%}
 
       {%- if item.link -%}
-        {% include a.html href=item.link class="link" %}
-          {%- if item.link_text -%}{{ item.link_text }}{%- else -%}{{ item.link }}{%- endif -%}
-        </a>
+        {% assign item_link_content = item.link_text | default: item.link %}
+        {% include a.html href=item.link class="link" track_label=item.title content=item_link_content %}
       {%- endif -%}
 
       {%- if item.detail_link -%}
         <p>
-          {% include a.html href=item.detail_link class="link detail-link" %}
-            {{ item.detail_link_text | default: "상세 보기" }}
-          </a>
+          {% assign detail_link_content = item.detail_link_text | default: "상세 보기" %}
+          {% include a.html href=item.detail_link class="link detail-link" track_label=item.title content=detail_link_content %}
         </p>
       {%- endif -%}
 
       <p class="no-print aditional-links">
         {% for link in item.additional_links %}
-          {% include a.html href=link.url class="" %}
-            <i class="{{ link.icon }}" title="{{ link.title | escape }}"></i>
-          </a>
+          {% capture additional_icon_markup %}<i class="{{ link.icon }}" title="{{ link.title | escape }}"></i>{% endcapture %}
+          {% include a.html href=link.url class="" track_label=link.title content=additional_icon_markup %}
         {% endfor %}
       </p>
     </div>

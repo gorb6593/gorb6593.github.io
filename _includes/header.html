@@ -27,6 +27,12 @@
             </a>
           </li>
         {%- endif -%}
+        {% for link in site.additional_links %}
+          <li>
+            {% capture icon_markup %}<i class="{{ link.icon }}" title="{{ link.title | escape }}"></i>{% endcapture %}
+            {% include a.html href=link.url class="button button--sacnite button--round-l" content=icon_markup track_label=link.title %}
+          </li>
+        {% endfor %}
         {%- if site.linkedin_username -%}
           <li>
             <a target="_blank" href="https://www.linkedin.com/in/{{ site.linkedin_username| cgi_escape | escape }}" class="button button--sacnite button--round-l">
@@ -97,13 +103,6 @@
             </a>
           </li>
         {%- endif -%}
-        {% for link in site.additional_links %}
-          <li>
-            {% include a.html href=link.url class="button button--sacnite button--round-l" %}
-              <i class="{{ link.icon }}" title="{{ link.title | escape }}"></i>
-            </a>
-          </li>
-        {% endfor %}
       </ul>
 
       {%- if site.email -%}
@@ -118,7 +117,7 @@
       {%- endif -%}
       {%- if site.website -%}
         <p>
-          {{ site.website_title | default: "Web" }}: {% include a.html href=site.website %}{{ site.website | escape }}</a>
+          {{ site.website_title | default: "Web" }}: {% include a.html href=site.website content=site.website %}
         </p>
       {%- endif -%}
     </div>

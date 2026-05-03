@@ -1,9 +1,26 @@
-{% assign href = include.href | strip %}
-{% assign protocol = href | slice: 0, 4 %}
-{% assign mailto = href | slice: 0, 7 %}
-{% assign tel = href | slice: 0, 4 %}
+{% assign href = include.href | default: '' | strip %}
+{% assign is_external = false %}
+{% assign is_mailto = false %}
+{% assign is_tel = false %}
+
+{% if href contains 'http://' or href contains 'https://' %}
+  {% assign is_external = true %}
+{% endif %}
+
+{% if href contains 'mailto:' %}
+  {% assign is_mailto = true %}
+{% endif %}
+
+{% if href contains 'tel:' %}
+  {% assign is_tel = true %}
+{% endif %}
+
+{% assign track_label = include.track_label | default: href %}
 <a
-  href="{% if protocol == 'http' or mailto == 'mailto:' or tel == 'tel:' %}{{ href }}{% else %}{{ href | relative_url }}{% endif %}"
-  {% if protocol == 'http' %}target="_blank" rel="noopener"{% endif %}
+  href="{% if is_external or is_mailto or is_tel %}{{ href }}{% else %}{{ href | relative_url }}{% endif %}"
+  {% if is_external %}target="_blank" rel="noopener"{% endif %}
   class="{{ include.class }}"
->
+  data-track-click="true"
+  data-track-href="{{ href }}"
+  data-track-label="{{ track_label | escape }}"
+>{{ include.content }}</a>

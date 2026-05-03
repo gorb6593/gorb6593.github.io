@@ -21,10 +21,10 @@ github_username: gorb6593
 tracking_api_base_url: https://api.harryworlds.com
 
 # Additional icon links
-#additional_links:
-#  - title: Blog
-#    icon: fas fa-blog
-#    url: https://harrystroy.tistory.com
+additional_links:
+  - title: Tistory
+    icon: fas fa-blog
+    url: https://harrystroy.tistory.com
 
 # About Section
 about_profile_image: images/profile.jpeg
@@ -35,9 +35,9 @@ about_highlights:
   - title: 사업 성과 지향
     description: 세무 신고 기간 75% 단축으로 사업 성과 달성을 우선합니다.
   - title: 도메인 적응력
-    description: 세무, 교육 플랫폼의 복잡한 운영 구조를 빠르게 이해해 업무 효율을 극대화합니다.
+    description: 요양, 세무, 교육 플랫폼의 복잡한 운영 구조를 빠르게 이해해 업무 효율을 극대화합니다.
   - title: 소통을 돕는 개발자
-    description: 여러정보를 문서로 자산화 하고 사업팀과 개발팀을 이어주며 조직의 동반 성장을 이끕니다.
+    description: 여러 정보를 문서로 자산화 하고 사업팀과 개발팀을 이어주며 조직의 동반 성장을 이끕니다.
   - title: 사업 이해도
     description: 앱을 개발/운영하며 사업의 전 과정을 경험했으며 광고를 통한 수익을 발생시키고 있습니다.
 
@@ -141,7 +141,7 @@ content:
         badge: 개인 프로젝트
         sub_title: CCTV 모니터링 앱
         caption: 2024
-        title_link: /2024/04/20/icam-product-story.html
+        #title_link: /2024/04/20/icam-product-story.html
         store_link: https://apps.apple.com/kr/app/아이캠/id6755982767
         store_label: App Store 바로가기
         android_link: https://play.google.com/store/apps/developer?id=이해규
@@ -164,7 +164,7 @@ content:
         badge: 개인 프로젝트
         sub_title: 상담 및 채팅 앱
         caption: 2024
-        title_link: /2024/04/20/maeumgirok-product-story.html
+        #title_link: /2024/04/20/maeumgirok-product-story.html
         store_link: https://apps.apple.com/kr/app/마음기록/id6753328068
         store_label: App Store 바로가기
         additional_links:
@@ -200,13 +200,13 @@ content:
 #          - 운영팀 관점의 병목을 분석하고, 실제로 어떤 기준으로 개선했는지 정리했습니다.
 #          - 앞으로 비슷한 글을 추가할 때 참고할 수 있는 예시 포맷입니다.
 
-      - layout: left
-        title: 요양 시스템 전면 리뉴얼
-        compact: true
-        badge: 기웅정보통신
-        sub_title: 주·야간보호 ERP 리뉴얼 회고
-        caption: 2024.04
-        title_link:  https://www.notion.so/3497ef09c555804798d9cc34ed45ce53
+#      - layout: left
+#        title: 요양 시스템 전면 리뉴얼
+#        compact: true
+#        badge: 기웅정보통신
+#        sub_title: 주·야간보호 ERP 리뉴얼 회고
+#        caption: 2024.04
+#        title_link:  https://www.notion.so/3497ef09c555804798d9cc34ed45ce53
 
 #      - layout: left
 #        title: 이지케어 앱 신규개발

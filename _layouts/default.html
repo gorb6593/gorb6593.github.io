@@ -5,7 +5,9 @@
 
 <body class="{% if site.darkmode == true and site.darkmode != 'never' %}dark{% endif %}">
 
+  <div class="page-section" data-track-section="header">
   {%- include header.html -%}
+</div>
 
   <main class="page-content" aria-label="Content">
     <div class="wrapper">
@@ -14,11 +16,13 @@
         {%- include gtm_body.html -%}
       {%- endif -%}
 
+      <div class="page-section" data-track-section="about">
       {%- include about.html -%}
+</div>
 
       {%- if site.version == 2 -%}
         {% for section in site.content %}
-          <div class="container {{ section.layout }}-container">
+          <div class="container {{ section.layout }}-container page-section" data-track-section="{{ section.title | slugify }}">
             <h3 id="{{ section.title | slugify }}">{{ section.title }}</h3>
             {% include {{ section.layout | prepend: "section-" | append: ".html" }} content=section.content %}
           </div>
@@ -29,7 +33,9 @@
     </div>
   </main>
 
+  <div class="page-section" data-track-section="footer">
   {%- include footer.html -%}
+</div>
   {% if site.darkmode == false %}
     <script src="{{ '/assets/js/index.js' | relative_url }}"></script>
   {% endif %}
