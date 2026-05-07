@@ -1,16 +1,42 @@
 (function () {
+  var params = new URLSearchParams(window.location.search);
+  var debugMode = params.get('q') === '1';
+
+  function debugLog() {
+    if (!debugMode || !window.console || typeof window.console.log !== 'function') {
+      return;
+    }
+
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift('[portfolio-tracking]');
+    window.console.log.apply(window.console, args);
+  }
+
+  function debugWarn() {
+    if (!debugMode || !window.console || typeof window.console.warn !== 'function') {
+      return;
+    }
+
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift('[portfolio-tracking]');
+    window.console.warn.apply(window.console, args);
+  }
+
   if (window.location.protocol === 'file:') {
+    debugWarn('Skipped because page is opened with file:// protocol.');
     return;
   }
 
   var apiBaseUrl = window.TRACKING_API_BASE_URL || null;
   if (!apiBaseUrl) {
+    debugWarn('Skipped because TRACKING_API_BASE_URL is missing.');
     return;
   }
 
   var localStorageRef = getStorage('localStorage');
   var sessionStorageRef = getStorage('sessionStorage');
   if (!localStorageRef || !sessionStorageRef) {
+    debugWarn('Skipped because browser storage is unavailable.');
     return;
   }
 
@@ -19,50 +45,34 @@
   var pageTrackedKey = 'portfolioTracked:' + window.location.pathname + window.location.search;
   var visitorId = ensureStorageValue(localStorageRef, visitorStorageKey);
   var sessionId = ensureStorageValue(sessionStorageRef, sessionStorageKey);
-  var params = new URLSearchParams(window.location.search);
+
+  debugLog('Debug mode enabled.', {
+    endpoint: normalizeApiBase(apiBaseUrl) + '/api/v1/portfolio/visits',
+    visitorId: visitorId,
+    sessionId: sessionId,
+    pageTrackedKey: pageTrackedKey
+  });
 
   if (!sessionStorageRef.getItem(pageTrackedKey)) {
     sendTrackingEvent('page_view', {
       source: 'gorb6593.github.io'
-    }, true, function () {
+    }, function () {
       sessionStorageRef.setItem(pageTrackedKey, '1');
+      debugLog('Marked page as tracked for this session.', pageTrackedKey);
     });
+  } else {
+    debugLog('Skipped page_view because this page was already tracked in the current session.', pageTrackedKey);
   }
 
-  document.addEventListener('click', handleClickEvent, true);
-
-  function handleClickEvent(event) {
-    var target = event.target.closest('[data-track-click="true"], a[href], [role="link"]');
-    if (!target) {
-      return;
-    }
-
-    var href = target.getAttribute('data-track-href') || target.getAttribute('href') || '';
-    var label = target.getAttribute('data-track-label') || extractLabel(target);
-    var sectionName = findSectionName(target);
-
-    sendTrackingEvent('click', {
-      eventName: label || 'click',
-      elementText: label,
-      linkUrl: href,
-      sectionName: sectionName,
-      source: 'gorb6593.github.io'
-    }, false);
-  }
-
-  function sendTrackingEvent(eventType, extraPayload, useBeacon, onSuccess) {
-    var payload = buildBasePayload(eventType, extraPayload || {});
+  function sendTrackingEvent(eventType, extraPayload, onSuccess) {
+    var payload = buildBasePayload(extraPayload || {});
     var endpoint = normalizeApiBase(apiBaseUrl) + '/api/v1/portfolio/visits';
     var body = JSON.stringify(payload);
 
-    if (useBeacon && navigator.sendBeacon) {
-      var blob = new Blob([body], { type: 'application/json' });
-      var sent = navigator.sendBeacon(endpoint, blob);
-      if (sent && typeof onSuccess === 'function') {
-        onSuccess();
-      }
-      return;
-    }
+    debugLog('Sending event.', {
+      eventType: eventType,
+      payload: payload
+    });
 
     fetch(endpoint, {
       method: 'POST',
@@ -70,29 +80,36 @@
         'Content-Type': 'application/json'
       },
       body: body,
-      keepalive: useBeacon,
+      keepalive: false,
       mode: 'cors'
     }).then(function (response) {
+      debugLog('Tracking response received.', {
+        eventType: eventType,
+        ok: response.ok,
+        status: response.status
+      });
+
       if (response.ok && typeof onSuccess === 'function') {
         onSuccess();
       }
+
+      if (!response.ok) {
+        debugWarn('Tracking request failed.', {
+          eventType: eventType,
+          status: response.status
+        });
+      }
     }).catch(function (error) {
       console.warn('Portfolio tracking failed:', error);
+      debugWarn('Tracking request threw an error.', error);
     });
   }
 
-  function buildBasePayload(eventType, extraPayload) {
+  function buildBasePayload(extraPayload) {
     return {
       visitorId: visitorId,
       sessionId: sessionId,
-      eventType: eventType,
-      eventName: extraPayload.eventName || null,
       source: extraPayload.source || 'gorb6593.github.io',
-      sectionName: extraPayload.sectionName || null,
-      elementText: extraPayload.elementText || null,
-      linkUrl: extraPayload.linkUrl || null,
-      durationMs: null,
-      scrollDepthPercent: null,
       pageTitle: document.title,
       pagePath: window.location.pathname,
       pageUrl: window.location.href,
@@ -157,17 +174,9 @@
       return storage;
     } catch (e) {
       console.warn('Portfolio tracking storage unavailable:', e);
+      debugWarn('Storage unavailable.', { storageType: type, error: e });
       return null;
     }
-  }
-
-  function extractLabel(element) {
-    return (element.getAttribute('title') || element.getAttribute('aria-label') || element.innerText || element.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 255);
-  }
-
-  function findSectionName(element) {
-    var section = element.closest('[data-track-section]');
-    return section ? section.getAttribute('data-track-section') : null;
   }
 
   function normalizeApiBase(url) {
