@@ -42,9 +42,11 @@
 
   var visitorStorageKey = 'portfolioVisitorId';
   var sessionStorageKey = 'portfolioSessionId';
+  var previousPageStorageKey = 'portfolioPreviousPageUrl';
   var pageTrackedKey = 'portfolioTracked:' + window.location.pathname + window.location.search;
   var visitorId = ensureStorageValue(localStorageRef, visitorStorageKey);
   var sessionId = ensureStorageValue(sessionStorageRef, sessionStorageKey);
+  var previousPageUrl = sessionStorageRef.getItem(previousPageStorageKey) || '';
 
   debugLog('Debug mode enabled.', {
     endpoint: normalizeApiBase(apiBaseUrl) + '/api/v1/portfolio/visits',
@@ -58,6 +60,7 @@
       source: 'gorb6593.github.io'
     }, function () {
       sessionStorageRef.setItem(pageTrackedKey, '1');
+      sessionStorageRef.setItem(previousPageStorageKey, window.location.href);
       debugLog('Marked page as tracked for this session.', pageTrackedKey);
     });
   } else {
@@ -113,6 +116,7 @@
       pageTitle: document.title,
       pagePath: window.location.pathname,
       pageUrl: window.location.href,
+      previousPageUrl: previousPageUrl,
       referrer: document.referrer || '',
       utmSource: params.get('utm_source'),
       utmMedium: params.get('utm_medium'),
