@@ -67,8 +67,28 @@
     debugLog('Skipped page_view because this page was already tracked in the current session.', pageTrackedKey);
   }
 
+  document.addEventListener('click', handleClickEvent, true);
+
+  function handleClickEvent(event) {
+    var target = event.target.closest('[data-track-click="true"], a[href], [role="link"]');
+    if (!target) {
+      return;
+    }
+
+    var href = target.getAttribute('data-track-href') || target.getAttribute('href') || '';
+    var label = target.getAttribute('data-track-label') || extractLabel(target) || href || 'click';
+
+    sendTrackingEvent('click', {
+      eventName: label,
+      sectionName: findSectionName(target),
+      elementText: label,
+      linkUrl: href,
+      source: 'gorb6593.github.io'
+    });
+  }
+
   function sendTrackingEvent(eventType, extraPayload, onSuccess) {
-    var payload = buildBasePayload(extraPayload || {});
+    var payload = buildBasePayload(eventType, extraPayload || {});
     var endpoint = normalizeApiBase(apiBaseUrl) + '/api/v1/portfolio/visits';
     var body = JSON.stringify(payload);
 
@@ -83,7 +103,7 @@
         'Content-Type': 'application/json'
       },
       body: body,
-      keepalive: false,
+      keepalive: eventType === 'click',
       mode: 'cors'
     }).then(function (response) {
       debugLog('Tracking response received.', {
@@ -108,11 +128,16 @@
     });
   }
 
-  function buildBasePayload(extraPayload) {
+  function buildBasePayload(eventType, extraPayload) {
     return {
       visitorId: visitorId,
       sessionId: sessionId,
+      eventType: eventType || 'page_view',
+      eventName: extraPayload.eventName || null,
       source: extraPayload.source || 'gorb6593.github.io',
+      sectionName: extraPayload.sectionName || null,
+      elementText: extraPayload.elementText || null,
+      linkUrl: extraPayload.linkUrl || null,
       pageTitle: document.title,
       pagePath: window.location.pathname,
       pageUrl: window.location.href,
@@ -140,6 +165,23 @@
       doNotTrack: navigator.doNotTrack || window.doNotTrack || null,
       visitedAtClient: new Date().toISOString()
     };
+  }
+
+  function extractLabel(element) {
+    var iconWithTitle = element.querySelector('[title]');
+    return (
+      element.getAttribute('title') ||
+      element.getAttribute('aria-label') ||
+      (iconWithTitle ? iconWithTitle.getAttribute('title') : '') ||
+      element.innerText ||
+      element.textContent ||
+      ''
+    ).trim().replace(/\s+/g, ' ').slice(0, 255);
+  }
+
+  function findSectionName(element) {
+    var section = element.closest('[data-track-section]');
+    return section ? section.getAttribute('data-track-section') : null;
   }
 
   function ensureStorageValue(storage, key) {
