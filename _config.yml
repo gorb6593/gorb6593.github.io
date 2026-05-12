@@ -33,13 +33,13 @@ about_highlights:
   - title: 5년 차 백엔드 전문가
     description: Java, Spring Boot, AWS 기반으로 안정적인 서버와 운영 시스템을 구축합니다.
   - title: 사업 성과 지향
-    description: 세무 신고 기간 75% 단축으로 사업 성과 달성을 우선합니다.
+    description: 세무 신고 기간 75% 단축하며 성과 달성을 우선했습니다.
   - title: 도메인 적응력
-    description: 요양, 세무, 교육 플랫폼의 복잡한 운영 구조를 빠르게 이해해 업무 효율을 극대화합니다.
-  - title: 소통을 돕는 개발자
-    description: 여러 정보를 문서로 자산화 하고 사업팀과 개발팀을 이어주며 조직의 동반 성장을 이끕니다.
+    description: 프로세스를 기획·제안하여 수동 업무 비중의 80% 이상을 시스템화했습니다.
+  - title: 성장하는 개발자
+    description: 사내 자기계발 1위를 기록한 꾸준함으로 기술을 실무에 빠르게 녹여냅니다.
   - title: 사업 이해도
-    description: 앱을 개발/운영하며 사업의 전 과정을 경험했으며 광고를 통한 수익을 발생시키고 있습니다.
+    description: 앱을 개발 및 운영하며 사업의 전 과정을 경험하고 있으며 광고를 통한 수익도 창출하고 있습니다.
 
 content:
   - title: Experience
@@ -53,20 +53,19 @@ content:
           **요양 서비스 플랫폼** (전체 주간보호기관 중 약 10% 고객 보유)
           
           **요양 시스템 전면 리뉴얼** (주·야간보호 ERP 2025.03 ~ 2025.12)
-          - **PHP → Java Spring Boot, Vue.js 전환** 마이그레이션 주도
-          - OzReport (PDF 다운로드 및 인쇄) 연동 및
-          - 내부 관리자 페이지 개발
-          - 공단 스크래핑 개발 및 연동
+          - **PHP → Java Spring Boot, Vue.js 전환** 마이그레이션 주도(API 평균 응답속도 3초 → 0.5초) 
+          - OzReport 연동을 통한 약 50개의 PDF 다운로드 및 인쇄 프로세스 구축(문서 발행 오류 1% 미만) 
+          - 국민건강보험공단 스크래핑 자동화를 통한 실무 업무 시간 단축(주당 10시간)
           
           **이지케어 앱 신규개발** (2025.12 ~ 2026.02)
-          - 레거시 Flutter 앱을 현대화 
+          - 히스토리 부재로 중단되었던 레거시 Flutter 앱을 리팩토링해 전면 문서화 및 코드리뷰
           - FCM 기반 푸시 알림 시스템 구축
-          - 웹뷰 형태의 서비스에 주·야간보호 추가
+          - 하이브리드 웹뷰 구조 개선으로 신규 기능(주·야간보호) 업데이트
 
-          **요양 시스템 고도화** (주·야간보호 ERP 2026.02 ~ 2026.04)
+          **요양 시스템 고도화** (주·야간보호 ERP 2026.02 ~ 2026.05)
           - NICE 결제 연동 및 관리자 페이지 개발
-          - AI 업무 지원 기능 추가
-          - 세무 서비스 추가 개발
+          - AI 업무 지원 기능을 통한 요양 일지 초안 작성 보조 (작성 시간 60% 단축)
+          - 세무 서비스 통합 개발로 기관 정산 및 신고 프로세스 일원화
 
       - layout: left
         title: 리드넘버
@@ -89,7 +88,7 @@ content:
           
           **레거시 시스템 개선 및 유지보수** (2024.01 ~ 2025.02)
           - 수임동의 프로세스 자동화로 **고객 등록 시간 70% 단축**
-          - 고객 상태 자동변경 배치 고도화로 **상태 관리 정확도 100%** 달성
+          - 고객 상태 자동변경 배치 고도화로 **상태 관리 정확도 99%** 달성
 
       - layout: left
         title: 챔프스터디(해커스)
@@ -141,7 +140,6 @@ content:
         badge: 개인 프로젝트
         sub_title: CCTV 모니터링 앱
         caption: 2024
-        #title_link: /2024/04/20/icam-product-story.html
         store_link: https://apps.apple.com/kr/app/아이캠/id6755982767
         store_label: App Store 바로가기
         android_link: https://play.google.com/store/apps/developer?id=이해규
@@ -164,7 +162,6 @@ content:
         badge: 개인 프로젝트
         sub_title: 상담 및 채팅 앱
         caption: 2024
-        #title_link: /2024/04/20/maeumgirok-product-story.html
         store_link: https://apps.apple.com/kr/app/마음기록/id6753328068
         store_label: App Store 바로가기
         additional_links:
